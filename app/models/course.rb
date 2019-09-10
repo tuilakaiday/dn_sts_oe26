@@ -15,4 +15,17 @@ class Course < ApplicationRecord
     length: {maximum: Settings.course.max_length_name}
   validates :content, presence: true,
     length: {maximum: Settings.course.max_length_content}
+
+  scope :load_courses, ->(stt) do
+    stt ? where(status: stt) : where(status: [:archive, :running, :finish])
+  end
+  scope :order_by, ->{order(created_at: :desc)}
+
+  def start_course
+    update_columns(start_date: Time.zone.now, status: :running)
+  end
+
+  def finish_course
+    update_columns(status: :finish)
+  end
 end

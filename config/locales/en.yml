@@ -7,6 +7,46 @@ en:
       submit: "Submitted"
     sidebarmember:
       all_title: "All title"
+  admin:
+    users:
+      index:
+        title: "Users Manager"
+        not_access: "You don't have access in this function"
+      destroy:
+        delete_success: "Successfully delete user %{name}"
+        delete_fail: "Failed delete user %{name}"
+      update:
+        active_success: "Successfully active user %{name}"
+        active_fail: "Failed active user %{name}"
+      user:
+        birthday: "Birthday: %{day}"
+        university: "University: %{university}"
+        btn_active: Active
+        btn_delete: Delete
+        confirm_delete: Delete user %{name}, Are you sure?
+        confirm_active: Acitve user %{name}, Are you sure?
+    courses:
+      index:
+        not_access: "You not access for this function"
+      course:
+        btn_delete: Delete
+        btn_start: Start
+        btn_finish: Finish
+        confirm_delete: Delete Course %{name}, Are you sure?
+        confirm_start: Start Course %{name}, Are you sure?
+        confirm_finish: Finish Course %{name}, Are you sure?
+      destroy:
+        delete_success: "Successfully delete course %{name}"
+        delete_fail: "Failed delete course %{name}"
+      start:
+        success_start: "This course is start"
+        fails_start: "This course can't start"
+      finish:
+        success_finish: "This course was finished"
+        fails_finish: "This course can't finish"
+
+  pundit:
+    default: "You cannot perform this action."
   notification:
     one: "The form contains 1 error"
     other: "The form contains %{count} errors"
@@ -39,6 +79,16 @@ en:
   layouts:
     application:
       title: "Framgia Training System"
+    admin_header:
+      users: Users
+      courses: Courses
+      subject&task: "Subjects & Tasks"
+      all: All
+      acticated: Acticated
+      archive: Archive
+      completed: Completed
+      running: Running
+      search: Search
     header:
       home: "Home"
       login: "Login"

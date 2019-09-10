@@ -1,0 +1,29 @@
+.card-course{
+  width: 15rem;
+  height: 26rem;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-top: auto;
+}
+.card-course img{
+  width: 100%;
+  height: auto;
+  display: block;
+  padding: 5%;
+  border-radius: 5%;
+
+}
+table.center {
+  margin-left:auto;
+  margin-right:auto;
+  padding: 10px;
+}
+table.center tr,td {
+  padding: 15px;
+}
+p.card-text{
+  font-size: 11px;
+}
+.card-course #card-btn{
+  margin-top: 1rem;
+}

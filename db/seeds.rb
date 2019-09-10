@@ -26,6 +26,19 @@ User.create!(name:  "vo van tr3",
              password: "123123",
              password_confirmation: "123123",
              role: 1)
+User.create!(name:  "Admin",
+             email: "admin@gmail.com",
+             password: "111111",
+             password_confirmation: "111111",
+             activated: true,
+             role: :admin)
+30.times do |x|
+  User.create!(name:  "User_#{x}",
+             email: "user_#{x}@gmail.com",
+             password: "111111",
+             password_confirmation: "111111")
+
+end
 Course.create!(name: "Ruby",
                content: "Khoa hoc ruby la khoa hoc chat luong lam nghe",
                start_date: Time.now(),

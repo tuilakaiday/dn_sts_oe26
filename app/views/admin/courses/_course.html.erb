@@ -1,0 +1,36 @@
+<div class="card-course">
+  <%= image_tag("ruby.png", alt: "card image") %>
+  <div class="card-body">
+    <h5 class="card-title">
+      <%= link_to course.name, "#" %>
+    </h5>
+    <p class="card-text">
+      <%= t(".status", status: course.status) %>
+    </p>
+    <p class="card-text">
+      <%= t(".location")+ ": " %>
+      <%= course.location %>
+    </p>
+    <% if current_user.admin? %>
+      <div class="row-sm-2 btn-card", id="card-btn">
+        <%= button_to t(".btn_delete"), admin_delete_course_path(id: course.id),
+          method: :delete, class: "btn btn-outline-danger float-left",
+          data: { confirm: t(".confirm_delete", name: course.name)} %>
+      </div>
+      <% if course.archive? %>
+        <div class="row-sm-2 btn-card", id="card-btn">
+          <%= button_to t(".btn_start"), admin_start_course_path(id: course.id),
+            method: :put, class: "btn btn-outline-success float-right",
+            data: { confirm: t(".confirm_start", name: course.name)} %>
+        </div>
+        <% elsif course.running? %>
+        <div class="row-sm-2 btn-card", id="card-btn">
+          <%= button_to t(".btn_finish"), admin_finish_course_path(id: course.id),
+            method: :put, class: "btn btn-outline-success float-right",
+            data: { confirm: t(".confirm_finish", name: course.name)} %>
+        </div>
+      <% end %>
+
+    <% end %>
+  </div>
+</div>
